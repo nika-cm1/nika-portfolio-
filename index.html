@@ -9,54 +9,51 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://i.imgur.com/a0dFOgm.png') no-repeat center center/cover;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
             color: #ffffff;
             text-align: center;
-            position: relative;
-        }
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(233, 69, 96, 0.3) 0%, rgba(15, 52, 96, 0.2) 70%, transparent 100%);
-            z-index: 0;
-            animation: gasAura 8s ease-in-out infinite;
-        }
-        @keyframes gasAura {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             width: 90%;
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 900px;
+            margin: 20px auto;
             background: rgba(0, 0, 0, 0.9);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
-            transition: transform 0.3s ease;
             position: relative;
             z-index: 1;
         }
-        .container:hover {
-            transform: scale(1.02);
+        .nft-image {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.7);
+            transition: transform 0.3s ease;
+        }
+        .nft-image:hover {
+            transform: scale(1.05);
         }
         h1 {
-            font-size: 2.8em;
+            font-size: clamp(2em, 5vw, 2.8em);
             margin-bottom: 15px;
             color: #e94560;
             text-shadow: 0 0 10px rgba(233, 69, 96, 0.7);
         }
         p {
-            font-size: 1.2em;
+            font-size: clamp(1em, 3vw, 1.2em);
             line-height: 1.6;
             margin-bottom: 20px;
         }
         h2 {
-            font-size: 1.8em;
+            font-size: clamp(1.5em, 4vw, 1.8em);
             margin-top: 30px;
             border-bottom: 2px solid #e94560;
             padding-bottom: 5px;
@@ -75,7 +72,7 @@
             padding: 0;
         }
         ul li {
-            font-size: 1.1em;
+            font-size: clamp(0.9em, 2.5vw, 1.1em);
             margin: 12px 0;
             padding-left: 20px;
             position: relative;
@@ -90,7 +87,7 @@
             margin-top: 30px;
         }
         .social-icons a {
-            margin: 15px;
+            margin: 10px;
             display: inline-block;
             transition: transform 0.3s ease;
         }
@@ -98,8 +95,8 @@
             transform: scale(1.2);
         }
         .social-icons img {
-            width: 45px;
-            height: 45px;
+            width: clamp(35px, 10vw, 45px);
+            height: auto;
             filter: brightness(0) invert(1);
         }
         .social-icons img:hover {
@@ -113,7 +110,7 @@
             color: #ffffff;
             text-decoration: none;
             border-radius: 25px;
-            font-size: 1.2em;
+            font-size: clamp(1em, 3vw, 1.2em);
             transition: all 0.3s ease;
             box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
         }
@@ -121,10 +118,19 @@
             background: #ff6b81;
             box-shadow: 0 0 15px rgba(233, 69, 96, 0.8);
         }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .nft-image {
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="https://i.imgur.com/a0dFOgm.png" alt="Gainz NFT" class="nft-image">
         <h1>Nika - Web3 Collaboration Strategist</h1>
         <p>Architecting partnerships across the Web3 ecosystem.</p>
         <p>Let’s connect and elevate your project!</p>
@@ -170,7 +176,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
             </a>
             <a href="https://discord.com/users/nika_cm" target="_blank">
-                <img src="https://cdn-icons-png.flaticons.com/512/2111/2111370.png" alt="Discord">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
             </a>
         </div>
         <a href="https://t.me/cm_nika" target="_blank" class="contact-btn">Partner with Me</a>
