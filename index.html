@@ -9,22 +9,35 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://i.imgur.com/a0dFOgm.png') no-repeat center center/cover;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%), 
+                        url('https://i.imgur.com/a0dFOgm.png') no-repeat center center/cover;
+            background-blend-mode: overlay;
             color: #ffffff;
             text-align: center;
+            animation: gradientShift 15s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .container {
             width: 90%;
-            max-width: 700px;
+            max-width: 800px;
             margin: 50px auto;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
         }
         h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #e94560;
         }
         p {
             font-size: 1.2em;
@@ -34,7 +47,7 @@
         h2 {
             font-size: 1.8em;
             margin-top: 30px;
-            border-bottom: 2px solid #ffffff;
+            border-bottom: 2px solid #e94560;
             padding-bottom: 5px;
         }
         .work-experience, .expertise {
@@ -47,18 +60,48 @@
         }
         ul li {
             font-size: 1.1em;
-            margin: 10px 0;
+            margin: 12px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        ul li:before {
+            content: "➔";
+            color: #e94560;
+            position: absolute;
+            left: 0;
         }
         .social-icons {
-            margin-top: 20px;
+            margin-top: 30px;
         }
         .social-icons a {
-            margin: 10px;
+            margin: 15px;
             display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
         }
         .social-icons img {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+        .social-icons img:hover {
+            filter: brightness(0) invert(0.8) hue-rotate(340deg);
+        }
+        .contact-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            transition: background 0.3s ease;
+        }
+        .contact-btn:hover {
+            background: #ff6b81;
         }
     </style>
 </head>
@@ -101,15 +144,16 @@
 
         <div class="social-icons">
             <a href="https://t.me/cm_nika" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="Telegram">
             </a>
             <a href="https://twitter.com/nika__cm" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
             </a>
             <a href="https://discord.com/users/nika_cm" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Discord_Logo_simplified.svg" alt="Discord">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
             </a>
         </div>
+        <a href="https://t.me/cm_nika" target="_blank" class="contact-btn">Get in Touch</a>
     </div>
 </body>
 </html>
